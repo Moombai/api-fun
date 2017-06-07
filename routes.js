@@ -18,7 +18,7 @@ router.param("qID", function(req, res, next, id){
 });
 
 router.param("aID", function(req, res, next, id){
-	req.answer = req.questions.answers.id(id);
+	req.answer = req.question.answers.id(id);
 	if(!req.answer){
 		err = new Error("Not Found");
 		err.status = 404;
@@ -69,7 +69,7 @@ router.post('/:qID/answers', function(req, res){
 // PUT /questions/:id/answers/:ID  
 // Edit a specific answer 
 router.put("/:qID/answers/:aID", function(req, res){
-	req.answer.update(req.body, function(err, results){
+	req.answer.update(req.body, function(err, result){
 		if(err) return next(err);
 		res.json(result);
 	});

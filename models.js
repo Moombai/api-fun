@@ -24,7 +24,7 @@ AnswerSchema.method("update", function(updates, callback){
 	this.parent().save(callback);
 });
 
-AnswerSchema.method("update", function(votes, callback){
+AnswerSchema.method("vote", function(vote, callback){
 	if(vote === "up"){
 		this.votes += 1;
 	} else {
@@ -42,7 +42,7 @@ var QuestionSchema = new Schema({
 	answers: [AnswerSchema]
 });
 
-Question.Schema.pre("save", function(next){
+QuestionSchema.pre("save", function(next){
 	this.answers.sort(SortAnswers);
 	next();
 });
