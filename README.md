@@ -6,7 +6,6 @@ This is a simple API using NodeJS as a serve and MongoDB the back end. You will 
 Instructions
 ===
 - Clone the repo to your local directory of choice 
-- Switch branches to `request-response-management`
 - Run `npm install` 
 - Download and install [MongoDB](https://www.mongodb.com/)
 - Run MongoDB in your terminal using the command `mongod`
